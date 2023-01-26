@@ -6,7 +6,6 @@ print(f"Hello {player_one}!")
 player_two = "Computer"
 choices = ["rock", "paper", "scissors"]
 
-
 print("Please select game mode.")
 game_mode = input("Enter '1' for first to win or enter '2' for first to two wins from three games. ")
 
@@ -18,73 +17,41 @@ if game_mode == "1":
     while True:
         player_one_choice = input()
         computer_choice = random.choice(choices)
+        if (player_one_choice == "rock" and computer_choice == "scissors") or \
+                (player_one_choice == "paper" and computer_choice == "rock") or \
+                (player_one_choice == "scissors" and computer_choice == "paper"):
 
-        if player_one_choice == "rock" and computer_choice == "paper":
             print(f"{computer_choice}")
-            break
-
-        elif player_one_choice == "rock" and computer_choice == "scissors":
-            print(f"{computer_choice}")
-            flag = True
-            break
-
-        elif player_one_choice == "rock" and computer_choice == "rock":
+            print(f"{player_one} Wins!")
+        elif player_one_choice == computer_choice:
             print(f"{computer_choice}")
             print("Draw")
-            continue
 
-        elif player_one_choice == "paper" and computer_choice == "rock":
+        elif (computer_choice == "rock" and player_one_choice == "scissors") or \
+                (computer_choice == "paper" and player_one_choice == "rock") or \
+                (computer_choice == "scissors" and player_one_choice == "paper"):
             print(f"{computer_choice}")
-            flag = True
-            break
+            print(f"The {player_two} Wins!")
 
-        elif player_one_choice == "paper" and computer_choice == "paper":
-            print(f"{computer_choice}")
-            print("Draw")
-            continue
+        else:
+            print("Incorrect answer!")
+            print("You have to chose rock,paper or scissors!")
+            answer = input()
 
-        elif player_one_choice == "paper" and computer_choice == "scissors":
-            print(f"{computer_choice}")
-            break
-
-        elif player_one_choice == "scissors" and computer_choice == "rock":
-            print(f"{computer_choice}")
-            break
-
-        elif player_one_choice == "scissors" and computer_choice == "paper":
-            print(f"{computer_choice}")
-            flag = True
-            break
-
-        elif player_one_choice == "scissors" and computer_choice == "scissors":
-            print(f"{computer_choice}")
-            print("Draw")
-            continue
-
-    if flag:
-        print(f"{player_one} Wins!")
-    else:
-        print(f"The {player_two} Wins!")
-
-    print(f"Do you want one more game {player_one}?")
-    answer = input()
-
-    while True:
+        print(f"Do you want one more game {player_one}?")
+        answer = input()
         if answer == "no":
             print("Ok, bye!")
             exit()
         elif answer == "yes":
             print("OK, let's play.")
-            print("Please select game mode.")
-            game_mode = input("Enter '1' for first to win or enter '2' for first to two wins from three games. ")
-            break
+            print("Start! Please chose rock,paper or scissors")
+            continue
 
         else:
             print("Incorrect answer!")
             print("You have to answer with 'yes' or 'no'.")
             answer = input()
-
-
 # 2 from 3
 elif game_mode == "2":
     print("2 from 3")
@@ -94,74 +61,53 @@ elif game_mode == "2":
     while counter_player_one < 2 and counter_player_two < 2:
         player_one_choice = input()
         computer_choice = random.choice(choices)
+        if (player_one_choice == "rock" and computer_choice == "scissors") or \
+                (player_one_choice == "paper" and computer_choice == "rock") or \
+                (player_one_choice == "scissors" and computer_choice == "paper"):
 
-        if player_one_choice == "rock" and computer_choice == "paper":
-            print(f"{computer_choice}")
-            print(f"Point for the {player_two}!")
-            counter_player_two += 1
-            print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-        elif player_one_choice == "rock" and computer_choice == "scissors":
-            print(f"{computer_choice}")
-            print(f"Point for {player_one}!")
             counter_player_one += 1
-            print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-        elif player_one_choice == "rock" and computer_choice == "rock":
             print(f"{computer_choice}")
-            print("Draw!")
             print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-        elif player_one_choice == "paper" and computer_choice == "rock":
+        elif player_one_choice == computer_choice:
             print(f"{computer_choice}")
-            print(f"Point for {player_one}!")
-            counter_player_one += 1
-            print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
+            print("Draw")
 
-        elif player_one_choice == "paper" and computer_choice == "paper":
-            print(f"{computer_choice}")
-            print("Draw!")
-            print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-        elif player_one_choice == "paper" and computer_choice == "scissors":
-            print(f"{computer_choice}")
-            print(f"Point for the {player_two}!")
+        elif (computer_choice == "rock" and player_one_choice == "scissors") or \
+                (computer_choice == "paper" and player_one_choice == "rock") or \
+                (computer_choice == "scissors" and player_one_choice == "paper"):
             counter_player_two += 1
-            print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-        elif player_one_choice == "scissors" and computer_choice == "rock":
             print(f"{computer_choice}")
-            print(f"Point for the {player_two}!")
-            counter_player_two += 1
             print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-        elif player_one_choice == "scissors" and computer_choice == "paper":
-            print(f"{computer_choice}")
-            print(f"Point for {player_one}!")
-            counter_player_one += 1
-            print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-        elif player_one_choice == "scissors" and computer_choice == "scissors":
-            print(f"{computer_choice}")
-            print("Draw!")
-            print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
-
-    if counter_player_one > counter_player_two:
-        print(f"{player_one} Wins!")
-    else:
-        print(f"The {player_two} Wins!")
-    print(f"Do you want to play more {player_one}?")
-    answer = input()
-
-    while True:
-        if answer == "no":
-            print("Ok, bye!")
-            exit()
-        elif answer == "yes":
-            print("OK, let's play.")
-            break
 
         else:
             print("Incorrect answer!")
-            print("You have to answer with 'yes' or 'no'.")
+            print("You have to chose rock,paper or scissors!")
             answer = input()
+
+        if counter_player_one == 2 and counter_player_one > counter_player_two:
+            print(f"{player_one} Wins!")
+            print(f"Do you want one more set {player_one}?")
+            new_answer = input()
+            if new_answer == "no":
+                print("Ok, bye!")
+                exit()
+            elif new_answer == "yes":
+                counter_player_two = 0
+                counter_player_one = 0
+                print("OK, let's play.")
+                print("Start! Please chose rock,paper or scissors")
+                continue
+        elif counter_player_two == 2 and counter_player_two > counter_player_one:
+            print(f"The {player_two} Wins!")
+            print(f"Do you want one more set {player_one}?")
+            new_answer = input()
+
+            if new_answer == "no":
+                print("Ok, bye!")
+                exit()
+            elif new_answer == "yes":
+                counter_player_two = 0
+                counter_player_one = 0
+                print("OK, let's play.")
+                print("Start! Please chose rock,paper or scissors")
+                continue
