@@ -21,16 +21,16 @@ if game_mode == "1":
                 (player_one_choice == "paper" and computer_choice == "rock") or \
                 (player_one_choice == "scissors" and computer_choice == "paper"):
 
-            print(f"{computer_choice}")
+            print(f"The computer chose: {computer_choice}")
             print(f"{player_one} Wins!")
         elif player_one_choice == computer_choice:
-            print(f"{computer_choice}")
+            print(f"The computer chose: {computer_choice}")
             print("Draw")
 
         elif (computer_choice == "rock" and player_one_choice == "scissors") or \
                 (computer_choice == "paper" and player_one_choice == "rock") or \
                 (computer_choice == "scissors" and player_one_choice == "paper"):
-            print(f"{computer_choice}")
+            print(f"The computer chose: {computer_choice}")
             print(f"The {player_two} Wins!")
 
         else:
@@ -66,17 +66,17 @@ elif game_mode == "2":
                 (player_one_choice == "scissors" and computer_choice == "paper"):
 
             counter_player_one += 1
-            print(f"{computer_choice}")
+            print(f"The computer chose: {computer_choice}")
             print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
         elif player_one_choice == computer_choice:
-            print(f"{computer_choice}")
+            print(f"The computer chose: {computer_choice}")
             print("Draw")
 
         elif (computer_choice == "rock" and player_one_choice == "scissors") or \
                 (computer_choice == "paper" and player_one_choice == "rock") or \
                 (computer_choice == "scissors" and player_one_choice == "paper"):
             counter_player_two += 1
-            print(f"{computer_choice}")
+            print(f"The computer chose: {computer_choice}")
             print(f"Result: {player_one}-{counter_player_one} : {player_two}-{counter_player_two}")
 
         else:
