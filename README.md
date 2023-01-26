@@ -18,6 +18,6 @@ The winner is the player whose choice beats the choice of his opponent. If both 
 
 
 #Do you want to give it a try? :) 
-#Life Demo soon
+#Life Demo https://replit.com/@DimaPopova/RockPaperScissors-1#main.py
 
 
