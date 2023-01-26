@@ -1,33 +1,19 @@
 import random
 
 # menu
-player_one = input("Enter your name:")
+player_one = input("Enter your name: ")
 print(f"Hello {player_one}!")
 player_two = "Computer"
 choices = ["rock", "paper", "scissors"]
-print("Do you wanna play?")
-answer = input()
 
-while True:
-    if answer == "no":
-        print("Ok, bye!")
-        exit()
-    elif answer == "yes":
-        print("OK, let's play.")
-        break
-
-    else:
-        print("Incorrect answer!")
-        print("You have to answer with 'yes' or 'no'.")
-        answer = input()
 
 print("Please select game mode.")
-game_mode = input("Enter '1' for first to win or enter '2' for first to two wins from three games.")
+game_mode = input("Enter '1' for first to win or enter '2' for first to two wins from three games. ")
 
 # first to win
 if game_mode == "1":
     print("First to win.")
-    print("Start!")
+    print("Start! Please chose rock,paper or scissors")
     flag = False
     while True:
         player_one_choice = input()
@@ -80,10 +66,29 @@ if game_mode == "1":
     else:
         print(f"The {player_two} Wins!")
 
+    print(f"Do you want one more game {player_one}?")
+    answer = input()
+
+    while True:
+        if answer == "no":
+            print("Ok, bye!")
+            exit()
+        elif answer == "yes":
+            print("OK, let's play.")
+            print("Please select game mode.")
+            game_mode = input("Enter '1' for first to win or enter '2' for first to two wins from three games. ")
+            break
+
+        else:
+            print("Incorrect answer!")
+            print("You have to answer with 'yes' or 'no'.")
+            answer = input()
+
+
 # 2 from 3
 elif game_mode == "2":
     print("2 from 3")
-    print("Start!")
+    print("Start! Please chose rock,paper or scissors")
     counter_player_one = 0
     counter_player_two = 0
     while counter_player_one < 2 and counter_player_two < 2:
@@ -145,3 +150,18 @@ elif game_mode == "2":
         print(f"{player_one} Wins!")
     else:
         print(f"The {player_two} Wins!")
+    print(f"Do you want to play more {player_one}?")
+    answer = input()
+
+    while True:
+        if answer == "no":
+            print("Ok, bye!")
+            exit()
+        elif answer == "yes":
+            print("OK, let's play.")
+            break
+
+        else:
+            print("Incorrect answer!")
+            print("You have to answer with 'yes' or 'no'.")
+            answer = input()
