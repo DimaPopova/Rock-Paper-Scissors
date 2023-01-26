@@ -11,9 +11,13 @@ The winner is the player whose choice beats the choice of his opponent. If both 
 
 
 #Posible Situations:
+
+
+
 ![image](https://user-images.githubusercontent.com/122818248/214951302-7501e384-dd4a-442a-bea8-2d47e49eb568.png)
 
 
 #Do you want to give it a try? :) 
+#Life Demo soon
 
 
